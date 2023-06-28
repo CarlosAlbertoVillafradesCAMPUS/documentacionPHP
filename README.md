@@ -33,10 +33,41 @@ funcionDePrueba(3, 4);
 Además de las funciones normales, PHP también permite funciones anónimas, funciones variables y funciones flecha para mayor flexibilidad en la definición de funciones.
 
 ```php
-phpCopy code// Ejemplo de función variable
-$saludo = function($nombre){
-    echo "Hola, " . $nombre;
-};
+README - Funciones json_encode y json_decode en PHP
+Este README proporciona información sobre las funciones json_encode y json_decode en PHP.
 
-$saludo("mundo");
+Funciones json_encode y json_decode
+Las funciones json_encode y json_decode se utilizan para trabajar con la codificación y decodificación de datos en formato JSON en PHP.
+
+json_encode: La función json_encode se utiliza para convertir una estructura de datos en PHP en una cadena JSON. Toma un objeto, un array o un valor escalar y lo convierte en una cadena JSON. La opción JSON_UNESCAPED_UNICODE se utiliza para preservar los caracteres Unicode sin escapar en la salida.
+json_decode: La función json_decode se utiliza para convertir una cadena JSON en una estructura de datos en PHP. Toma una cadena JSON y la convierte en un objeto, un array asociativo o un valor escalar según corresponda.
+Ejemplo de uso:
+
+php
+Copy code
+<?php
+$productos = [
+    [
+        "nombre" => "David",
+        "edad" => 18
+    ],
+    [
+        "nombre" => "Pedro",
+        "edad" => 21
+    ]
+];
+
+$json = '{"nombre":"David", "edad":18}';
+$data = json_decode($json);
+
+var_dump($productos);
+echo "<br><br>";
+
+$jsonCodificado = json_encode($productos, JSON_UNESCAPED_UNICODE);
+var_dump($jsonCodificado);
+
+echo "<br><br>".$data->nombre."<br>";
+echo $data->edad;
+?>
+En este ejemplo, se muestra cómo utilizar json_encode para convertir un array $productos en una cadena JSON y json_decode para convertir la cadena JSON $json en un objeto $data en PHP. También se muestra la impresión de los valores decodificados.phpCopy code// 
 ```

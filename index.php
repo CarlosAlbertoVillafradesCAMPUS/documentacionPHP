@@ -1,28 +1,39 @@
 <?php
-//? Las estructuras de control son las mismas de js, if, for, foreach, switch, while, do-while, también existe una estructura de control nueva que es el "match". 
 
-//* La estructura de control match es muy similar al switch, con la diferencia que compara por identidad, es un poco más estrícta. 
+    $productos = [
+        [
+            "nombre"=>"David", 
+            "edad"=>18
+        ],
+        [
+            "nombre"=>"pedro", 
+            "edad"=>21
+        ]
+    ];
 
-//? Algo importante de las estructuras de control es el control de excepciones. Nos permiten manejar errores o situaciones inespiradas que puedan ocurrir en la ejecución del programa
 
-//TODO: Funciones definidad por el usuario
-
-//* Son bloques de código reutilizables en varias partes del código que se pueden llamar en partes específicas del programa.Esto permite que el código sea modular y reutilizable. Son lo mismo que en js 
-
-function funcionDePrueba($num1, $num2){
-    echo $num1 + $num2;
-}
-funcionDePrueba(3,4); // Hay que usar la palabra reservada "function" para hacer uso de las funciones. 
-
-//! En php existen distintas formas de definir funciones:
-
-    // Existen las funciones anónimas, las funciones variables y también las funciones flecha.
-
-    //ej de función variable:
-
-    $saludo = function($nombre){
-        echo "Hola". $nombre;
-    };
-
-    $saludo("mundo");
+$json = '{"nombre":"David", "edad":18}';
+$data = json_decode($json);
 ?>
+
+<?php
+
+
+//Función Json_encode y Json_decode 
+
+
+//* Son funciones que se utilizan para incluir archivos externos de un programa.	//*La función json_encode() en PHP se utiliza para convertir una estructura de datos en PHP en una cadena JSON. 	
+?>	
+
+    <?php
+        var_dump($productos);
+        echo "<br><br>";
+        $json = json_encode($productos, JSON_UNESCAPED_UNICODE);
+        var_dump($json);
+
+        echo "<br><br>".$data->nombre."<br>";
+        echo $data->edad;
+
+
+        //!En pocas palabras uno es el proceso inverso del otro. json_decode convierta algo a un objeto y json_encode transforma un objeto en un string :D
+    ?>
