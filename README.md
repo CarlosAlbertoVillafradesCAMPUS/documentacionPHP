@@ -33,41 +33,61 @@ funcionDePrueba(3, 4);
 Además de las funciones normales, PHP también permite funciones anónimas, funciones variables y funciones flecha para mayor flexibilidad en la definición de funciones.
 
 ```php
-README - Funciones json_encode y json_decode en PHP
-Este README proporciona información sobre las funciones json_encode y json_decode en PHP.
+README - Programación Orientada a Objetos (POO) en PHP
+Este README proporciona información sobre la programación orientada a objetos (POO) en PHP.
 
-Funciones json_encode y json_decode
-Las funciones json_encode y json_decode se utilizan para trabajar con la codificación y decodificación de datos en formato JSON en PHP.
+Programación Orientada a Objetos (POO)
+La programación orientada a objetos (POO) es un paradigma de programación que se basa en el concepto de "objetos". Los objetos son entidades que representan conceptos del mundo real y que pueden tener propiedades (atributos) y realizar acciones (métodos).
 
-json_encode: La función json_encode se utiliza para convertir una estructura de datos en PHP en una cadena JSON. Toma un objeto, un array o un valor escalar y lo convierte en una cadena JSON. La opción JSON_UNESCAPED_UNICODE se utiliza para preservar los caracteres Unicode sin escapar en la salida.
-json_decode: La función json_decode se utiliza para convertir una cadena JSON en una estructura de datos en PHP. Toma una cadena JSON y la convierte en un objeto, un array asociativo o un valor escalar según corresponda.
-Ejemplo de uso:
+En PHP, la POO es ampliamente utilizada y permite la creación de objetos a partir de clases. Una clase es una plantilla o un molde que define las propiedades y comportamientos que tendrán los objetos que se creen a partir de ella.
+
+Los principales conceptos de la programación orientada a objetos son:
+
+Clase: Es una plantilla o definición que describe las características y comportamientos de los objetos que se pueden crear a partir de ella.
+Objeto: Es una instancia de una clase. Representa un individuo o entidad específica y tiene sus propias propiedades y comportamientos.
+Atributos: Son las propiedades o características de un objeto. Definen el estado de un objeto y se representan mediante variables en la clase.
+Métodos: Son las acciones o comportamientos que un objeto puede realizar. Representan las operaciones que pueden realizarse con un objeto y se definen como funciones en la clase.
+Principios de la POO
+Encapsulación
+La encapsulación es el principio que establece que los atributos y métodos relacionados deben agruparse en una clase para poder ocultar detalles internos y mostrar solo ciertas cosas, o una interfaz pública. Esto se logra con la definición de niveles de acceso como "público" (public), "privado" (private) o "protegido" (protected) para los atributos y métodos.
+
+Herencia
+La herencia es un mecanismo para crear nuevas clases en base a clases existentes. La clase que se utiliza como base para la creación de otra se denomina "clase padre" o "superclase", y la nueva clase se llama "clase hija" o "subclase". La herencia permite la reutilización de código y la creación de relaciones jerárquicas entre las clases. Las clases hijas heredan los métodos y propiedades públicas de la clase padre. El método constructor siempre es heredado de manera pública.
+
+Polimorfismo
+El polimorfismo es la capacidad de un objeto de tomar diferentes formas o comportarse de diferentes maneras según el contexto. Esto significa que varias clases pueden heredar de una misma clase base y cada una de ellas puede tener su propia implementación del método heredado. Por ejemplo:
 
 php
 Copy code
-<?php
-$productos = [
-    [
-        "nombre" => "David",
-        "edad" => 18
-    ],
-    [
-        "nombre" => "Pedro",
-        "edad" => 21
-    ]
-];
+// Clase base
+class Animal {
+    public function hacerSonido() {
+        echo "El animal hace un sonido genérico.";
+    }
+}
 
-$json = '{"nombre":"David", "edad":18}';
-$data = json_decode($json);
+// Clase derivada
+class Perro extends Animal {
+    public function hacerSonido() {
+        echo "El perro ladra.";
+    }
+}
 
-var_dump($productos);
-echo "<br><br>";
+// Clase derivada
+class Gato extends Animal {
+    public function hacerSonido() {
+        echo "El gato maulla.";
+    }
+}
 
-$jsonCodificado = json_encode($productos, JSON_UNESCAPED_UNICODE);
-var_dump($jsonCodificado);
+// Crear objetos de las clases derivadas
+$animal = new Animal();
+$perro = new Perro();
+$gato = new Gato();
 
-echo "<br><br>".$data->nombre."<br>";
-echo $data->edad;
-?>
-En este ejemplo, se muestra cómo utilizar json_encode para convertir un array $productos en una cadena JSON y json_decode para convertir la cadena JSON $json en un objeto $data en PHP. También se muestra la impresión de los valores decodificados.phpCopy code// 
+// Llamar al método hacerSonido() de cada objeto
+$animal->hacerSonido(); // Imprime "El animal hace un sonido genérico."
+$perro->hacerSonido(); // Imprime "El perro ladra."
+$gato->hacerSonido(); // Imprime "El gato maulla."
+En este ejemplo, se muestra cómo diferentes objetos creados a partir de las clases derivadas (Perro y Gato) pueden tener comportamientos distintos al llamar al mismo método hacerSonido() heredado de la clase base Animal. Esto se logra gracias al polimorfismo.
 ```
