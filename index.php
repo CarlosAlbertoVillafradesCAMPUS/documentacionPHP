@@ -1,14 +1,31 @@
 <?php 
+    //Todo: -> funciones matemáticas
+    // abs($x) -> //? Retorna el valor absoluto
+    // round($x) -> //? Transforma un número flotante a entero al valor que más se aproxime
+    // floor($x) -> //? Transforma un número flotante a entero hacia abajo 4.12 = 4
+    // ceil($x) -> //? Transforma un número flotante a entero hacia arriba 4.12  = 5
+    // pow($x, $y) -> //? Retorna la potenci//sqrt($x) -> //? Retorna la raiz cuadrad
+    // max($x, $y, ...) -> //? Retorna el valor mayor en un arreglo. 
+    // min($x, $y, ...) -> //? Lo mismo de max pero el menor
+    // pi() -> //? Retorna 3.1416...
 
-// Métodos mágicos
-
-echo "Son métodos especiales que sobreescriben las acciones por defecto cuando se realizan cierta acciones por defecto.\n\n";
-
-echo "OJO Todos los nombres de mérodos que cominezan con __ son reservados de PHP. Se recomineda no utilizarlos a menos que lo que se busque sea sobreescribir el comportamiento de PHP\n\n";
-
-// Los Siguientes métodos se consideran mágicos: __construct(), __destruct(), __call(), __callStatic(), __get(), __set(), __isset(), __unset(), __sleep(), __wakeup(), __serialize(), __unserialize(), __toString(), __invoke(), __set_state(), __clone(), and __debugInfo().\n\n TODOS LOS MÉTODOS MÁGIOS A EXCEPCIÓN DE __construct(), __destruct(), y __clone() deben ser declarados como públicos.
+    // rand() or rand(1,100) -> //? Retorna un número random entre dos parámetros
 
 
+// Ejemplo de uso de funciones matemáticas
 
-// __sleep() & __wakeup(): serialize() comprueba si la clase tiene un método con el nombre mágico __sleep(). Si es así, el método se ejecuta antes de cualquier serialización. Se puede limpiar el objeto y se supone que devuelve un array con los nombres de todas las variables de el objeto que se va a serializar. Si el método no devuelve nada, entonces null es serializado y un error E_NOTICE es emitido.
-?>
+$x = -5;
+$y = 3;
+
+echo "Valor absoluto de $x: " . abs($x) . "\n";
+echo "Redondeo de $y: " . round($y) . "\n";
+echo "Entero hacia abajo de $y: " . floor($y) . "\n";
+echo "Entero hacia arriba de $y: " . ceil($y) . "\n";
+echo "Potencia de $x elevado a $y: " . pow($x, $y) . "\n";
+echo "Raíz cuadrada de $y: " . sqrt($y) . "\n";
+echo "Valor máximo de $x y $y: " . max($x, $y) . "\n";
+echo "Valor mínimo de $x y $y: " . min($x, $y) . "\n";
+echo "Valor de PI: " . pi() . "\n";
+echo "Número aleatorio entre 1 y 100: " . rand(1, 100) . "\n";
+
+ ?>
